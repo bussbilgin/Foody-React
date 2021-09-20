@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import SearchResult from "./pages/SearchResult/SearchResult";
+import BusinessDetail from "./pages/BusinessDetail/BusinessDetail";
+import { useState } from "react";
 
 function App() {
+  const [term, setTerm] = useState("");
+  const [location, setLocation] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home
+              term={term}
+              termChange={setTerm}
+              location={location}
+              locationChange={setLocation}
+            />
+          </Route>
+          <Route path="/search">
+            <SearchResult />
+          </Route>
+          <Route path="/detail" component={BusinessDetail} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
