@@ -9,18 +9,16 @@ export default function SearchBar({
 }) {
   const handleTermChange = (event) => {
     termChange(event.target.value);
-    console.log(term);
   };
 
   const handleLocationChange = (event) => {
     locationChange(event.target.value);
-    console.log(location);
   };
 
   return (
     <div>
-      <section class="container">
-        <form class="search-box">
+      <section className="container">
+        <form className="search-box">
           <input
             type="text"
             placeholder="What do you want to eat?"
@@ -34,7 +32,12 @@ export default function SearchBar({
             value={location}
             onChange={handleLocationChange}
           />
-          <Link to="/search" term={term} location={location}>
+          <Link
+            to={{
+              pathname: "/search",
+              state: { term, searchLocation: location },
+            }}
+          >
             <input type="button" value="Search" />
           </Link>
         </form>

@@ -24,10 +24,8 @@ function App() {
               locationChange={setLocation}
             />
           </Route>
-          <Route path="/search">
-            <SearchResult />
-          </Route>
-          <Route path="/detail" component={BusinessDetail} />
+          <Route path="/search" component={SearchResult} />
+          <Route path="/detail/:id" component={BusinessDetail} />
         </Switch>
         <Footer />
       </div>

@@ -1,3 +1,13 @@
+Hello there,
+This is a personal project I use to showcase my current progress on React.JS.
+
+In this project, I am using React.JS and SASS in this project and I am following the BEM methodology.<br>
+I'm working on mobile responsiveness and I'm trying to build the folder structure to be scalable.<br>
+Project Uses Yelp Fusion API to make searches on Yelp,<br>
+Dynamically renders returned businesses.<br>
+
+Regards.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

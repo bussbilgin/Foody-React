@@ -4,6 +4,14 @@
 }
 
 .business {
+  margin-right: 100px;
+  margin-left: 100px;
+
+  @media (max-width: 767px) {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
   &__image {
     position: relative;
     margin-bottom: 20px;
@@ -14,14 +22,14 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 400px;
+      max-height: 450px;
       object-fit: cover;
       border-radius: 8px 8px 0px 0px;
     }
   }
 
   &__information {
-    max-height: 140px;
+    max-height: 151px;
     border-radius: 0px 0px 8px 8px;
     background-color: #212121;
     box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.3);

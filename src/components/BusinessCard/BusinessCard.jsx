@@ -1,91 +1,35 @@
 import { Link } from "react-router-dom";
 import "./BusinessCard.scss";
 
-export default function BusinessCard() {
+export default function BusinessCard({ business }) {
   return (
     <div>
-      <section class="container">
-        <div class="business-cards">
-          <h2>businesses near you</h2>
-          <div class="business-card">
-            <Link to="/detail" class="business card">
-              <figure class="business__image">
-                <img src="/photo.jpg" alt="Item Photo" />
-              </figure>
-              <div class="business__information">
-                <p class="business__header">Eta Bal</p>
-                <div class="business__review">
-                  <p class="business__review-rating">Star</p>
-                  <p class="business__review-count">Yorum</p>
-                </div>
-                <div class="business__address">
-                  <p>Cafer Ağa Mahallesi</p>
-                </div>
-              </div>
-            </Link>
-            <Link to="/detail" class="business card">
-              <figure class="business__image">
-                <img src="/photo.jpg" alt="Item Photo" />
-              </figure>
-              <div class="business__information">
-                <p class="business__header">Eta Bal</p>
-                <div class="business__review">
-                  <p class="business__review-rating">Star</p>
-                  <p class="business__review-count">Yorum</p>
-                </div>
-                <div class="business__address">
-                  <p>Cafer Ağa Mahallesi</p>
-                </div>
-              </div>
-            </Link>
-            <Link to="/detail" class="business card">
-              <figure class="business__image">
-                <img src="/photo.jpg" alt="Item Photo" />
-              </figure>
-              <div class="business__information">
-                <p class="business__header">Eta Bal</p>
-                <div class="business__review">
-                  <p class="business__review-rating">Star</p>
-                  <p class="business__review-count">Yorum</p>
-                </div>
-                <div class="business__address">
-                  <p>Cafer Ağa Mahallesi</p>
-                </div>
-              </div>
-            </Link>
-            <Link to="/detail" class="business card">
-              <figure class="business__image">
-                <img src="/photo.jpg" alt="Item Photo" />
-              </figure>
-              <div class="business__information">
-                <p class="business__header">Eta Bal</p>
-                <div class="business__review">
-                  <p class="business__review-rating">Star</p>
-                  <p class="business__review-count">Yorum</p>
-                </div>
-                <div class="business__address">
-                  <p>Cafer Ağa Mahallesi</p>
-                </div>
-              </div>
-            </Link>
-            <Link to="/detail" class="business card">
-              <figure class="business__image">
-                <img src="/photo.jpg" alt="Item Photo" />
-              </figure>
-              <div class="business__information">
-                <p class="business__header">Eta Bal</p>
-                <div class="business__review">
-                  <p class="business__review-rating">Star</p>
-                  <p class="business__review-count">Yorum</p>
-                </div>
-                <div class="business__address">
-                  <p>Cafer Ağa Mahallesi</p>
-                </div>
-              </div>
-            </Link>
+      <div className="cardss">
+        <Link to={`detail/${business.id}`} className="businesss">
+          <figure className="businesss__image">
+            <img
+              src={
+                business.image_url !== ""
+                  ? business.image_url
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"
+              }
+              alt="Business"
+            />
+          </figure>
+          <div className="businesss__information">
+            <p className="businesss__header">{business.name}</p>
+            <div className="businesss__review">
+              <p className="businesss__review-rating">{business.rating} Star</p>
+              <p className="businesss__review-count">
+                {business.review_count} Yorum
+              </p>
+            </div>
+            <div className="businesss__address">
+              <p>{business.location.display_address[0]}</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </Link>
+      </div>
     </div>
   );
 }

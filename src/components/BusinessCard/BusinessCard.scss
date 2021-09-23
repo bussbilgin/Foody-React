@@ -1,38 +1,23 @@
-section .container {
-  margin-bottom: 40px;
-}
-
-.business-cards {
-  h2 {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ff944d;
-  }
-}
-
-.business-card {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  max-width: 25%;
-  flex: 1 1 25%;
-  padding: 20px 15px;
+.cardss {
+  width: 350px;
+  height: 380px;
+  margin-bottom: 10px;
+  padding: 20px 10px;
+  transition: transform 0.4s;
 
   @media (max-width: 1024px) {
-    max-width: 33%;
-    flex: 1 1 33%;
+    width: 350px;
+    height: 320px;
   }
+}
 
-  @media (max-width: 767px) {
-    max-width: 50%;
-    flex: 1 1 50%;
-  }
+.cardss:hover {
+  transform: scale(1.1);
+}
 
+.businesss {
   &__image {
+    background-color: #fafafa;
     height: 200px;
     position: relative;
     margin-bottom: 8px;
@@ -58,7 +43,7 @@ section .container {
   }
 
   &__information {
-    max-height: 140px;
+    height: 130px;
     border-radius: 0px 0px 8px 8px;
     display: flex;
     flex-direction: column;
@@ -72,7 +57,7 @@ section .container {
   }
 
   &__header {
-    font-size: 18px;
+    font-size: 17px;
     text-transform: uppercase;
     text-align: center;
     margin-top: 4px;
@@ -81,7 +66,7 @@ section .container {
     color: #ffffff;
 
     @media (max-width: 1024px) {
-      font-size: 13px;
+      font-size: 15px;
     }
 
     @media (max-width: 767px) {
@@ -110,17 +95,9 @@ section .container {
   }
 
   &__address {
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     margin-bottom: 8px;
     color: #ffffff;
-
-    @media (max-width: 1024px) {
-      font-size: 13px;
-    }
-
-    @media (max-width: 767px) {
-      font-size: 13px;
-    }
   }
 }

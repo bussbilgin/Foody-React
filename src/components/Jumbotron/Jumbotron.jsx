@@ -4,15 +4,15 @@ import "./Jumbotron.scss";
 export default function Jumbotron() {
   return (
     <div>
-      <div class="feature-card">
-        <div class="container">
+      <div className="feature-card">
+        <div className="container">
           <Link to="/search">
             <img
-              class="feature__img"
+              className="feature__img"
               src="/img-sushi.jpeg"
               alt="Sushi Poster"
             />
-            <div class="feature__detail">
+            <div className="feature__detail">
               <h3>Sushi</h3>
               <p>Give them your love, not your ideas!</p>
             </div>

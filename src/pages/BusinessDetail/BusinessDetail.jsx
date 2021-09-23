@@ -1,22 +1,48 @@
 import "./BusinessDetail.scss";
+import { useState, useEffect } from "react";
 
-export default function BusinessDetail() {
+export default function BusinessDetail({ match }) {
+  const [businessDetail, setBusinessDetail] = useState({});
+
+  useEffect(() => {
+    fetch(
+      `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${match.params.id}?locale=tr_TR`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setBusinessDetail(data);
+      });
+  });
+  console.log(businessDetail);
+
   return (
     <div>
-      <section class="container detail">
-        <div class="business">
-          <figure class="business__image">
-            <img src="/photo.jpg" alt="Item Photo" />
+      <section className="container detail">
+        <div className="business">
+          <figure className="business__image">
+            <img src={businessDetail.image_url} alt="Business" />
           </figure>
-          <div class="business__information">
-            <p class="business__header">Eta Bal</p>
-            <div class="business__review">
-              <p class="business__review-rating">Star</p>
-              <p class="business__review-count">Yorum</p>
+          <div className="business__information">
+            <p className="business__header">{businessDetail.name}</p>
+            <div className="business__review">
+              <p className="business__review-rating">
+                {businessDetail.rating} Star
+              </p>
+              <p className="business__review-count">
+                {businessDetail.review_count} Yorum
+              </p>
             </div>
-            <div class="business__address">
-              <p>Cafer Ağa Mahallesi</p>
-              <a href="tel:05655666266">05655666266</a>
+            <div className="business__address">
+              <p>{businessDetail.location?.address1}</p>
+              <p>{businessDetail.location?.address2}</p>
+              <a href={businessDetail.display_phone}>
+                {businessDetail.display_phone}
+              </a>
             </div>
           </div>
         </div>

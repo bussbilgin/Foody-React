@@ -6,6 +6,10 @@
   justify-content: space-evenly;
   align-items: center;
 
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
   .cards {
     width: 350px;
     height: 250px;

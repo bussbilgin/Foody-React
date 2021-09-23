@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <>
       <header>
-        <div class="container">
+        <div className="container">
           <Link to="/">
             <h2>FOODY</h2>
           </Link>
@@ -16,13 +16,13 @@ export default function Navbar() {
             <a href="">Offers</a>
             <a href="">Contact</a>
           </nav>
-          <button class="hamburger">
-            <div class="bar"></div>
+          <button className="hamburger">
+            <div className="bar"></div>
           </button>
         </div>
       </header>
 
-      <nav class="mobile-nav">
+      <nav className="mobile-nav">
         <a href="#">Home</a>
         <a href="">Foods</a>
         <a href="">Restaurants</a>
