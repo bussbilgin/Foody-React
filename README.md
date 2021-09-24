@@ -8,6 +8,10 @@ Dynamically renders returned businesses.<br>
 
 Regards.
 
+### This demo of CORS Anywhere should be used for development purposes only. Click on the link below to temporarily open access to the demo:
+
+[LİNK](https://cors-anywhere.herokuapp.com/corsdemo)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
