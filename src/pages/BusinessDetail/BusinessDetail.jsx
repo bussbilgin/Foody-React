@@ -17,7 +17,7 @@ export default function BusinessDetail({ match }) {
       .then((data) => {
         setBusinessDetail(data);
       });
-  });
+  }, []);
   console.log(businessDetail);
 
   return (

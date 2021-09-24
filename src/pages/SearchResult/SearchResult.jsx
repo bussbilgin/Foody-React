@@ -19,7 +19,7 @@ export default function SearchResult(props) {
       .then((data) => {
         setBusinessList(data.businesses);
       });
-  });
+  }, []);
 
   console.log(businessList);
 
